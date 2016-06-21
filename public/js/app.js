@@ -7,11 +7,14 @@ $(document).ready(function(){
 
   function startCountdown(){
     setInterval(function(){
-      var secondsVal = seconds.text();
+      var secondsVal = +seconds.text();
       if(secondsVal === 0){
-}
-        else{
-          seconds.text(59);
+        seconds.text(59);
+      } else {
+        if(secondsVal <= 10){
+          seconds.text("0" + (secondsVal-1));
+      } else {
+        seconds.text(secondsVal -1);        }
         }
 
     }, 1000);
